@@ -1,6 +1,10 @@
 name: Publish Python 🐍 distributions 📦 to PyPI and TestPyPI
 
-on: workflow_call
+on: 
+  workflow_call:
+    secrets:
+      token:
+        required: true
 
 jobs:
   build-n-publish:
