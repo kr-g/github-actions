@@ -3,6 +3,11 @@ name: Publish Python 🐍 distributions 📦 to PyPI
 on: 
   workflow_call:
 
+inputs:
+  python-version:
+    description: "Version range or exact version of a Python version to use, using SemVer's version range syntax."
+    default: '3.9'
+
 jobs:
   build-n-publish:
     name: Build and publish Python 🐍 distributions 📦 to PyPI 
@@ -12,7 +17,7 @@ jobs:
     - name: Set up Python 
       uses: actions/setup-python@main
       with:
-        python-version: 3.9
+        python-version: ${{ inputs.python-version }}
     - name: Install pypa/build
       run: >-
         python -m
