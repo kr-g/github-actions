@@ -4,9 +4,9 @@ on:
   workflow_call:
 
     inputs:
-      python-version:
-        description: "Version range or exact version of a Python version to use, using SemVer's version range syntax."
-        default: '3.9'
+        python-version:
+            description: "Version range or exact version of a Python version to use, using SemVer's version range syntax."
+            default: '3.9'
 
 jobs:
   build-n-publish:
